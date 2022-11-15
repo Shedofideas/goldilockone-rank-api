@@ -23,6 +23,6 @@ app.get('/', async (req, res) => {
   res.status(200).json(rankWithPosition);
 });
 
-app.listen(3001, () => {
-  console.log('listening on port 3001');
+app.listen(process.env.PORT || 5000, () => {
+  console.log('server on');
 });

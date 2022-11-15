@@ -14,7 +14,7 @@ app.use(morgan('combined'));
 app.get('/', async (req, res) => {
   const rank = await knex('BestResultsTable')
     .where('PlayerType', 'Normal')
-    .where('Difficulty', req.query.difficulty)
+    .where('Difficulty', req.query.difficulty ? req.query.difficulty : 'Easy')
     .orderBy('DamageReceived', 'asc')
     .orderBy('Duration', 'asc')
 
